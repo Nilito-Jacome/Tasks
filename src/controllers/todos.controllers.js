@@ -12,12 +12,12 @@ const postUsers = async (req, res) => {
     res.status(400).json(error);
   }
 };
-//***BUSCAR_TASKS_CAGTEGORY***/
+//***CREAR_TASKS_CATEGORY***/
 const postTasksByUserId = async (req, res) => { 
   try {
-    const { title, categoryId, userId } = req.body;
+    const { addtask } = req.body;
     await Todos.create(     
-      { title, categoryId, userId }, 
+      { addtask }, 
     );
     res.status(201).send();
   } catch (error) {
