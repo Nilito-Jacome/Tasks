@@ -15,9 +15,9 @@ const postUsers = async (req, res) => {
 //***CREAR_TASKS_CATEGORY***/
 const postTasksByUserId = async (req, res) => { 
   try {
-    const { title, description, IsCompleted, userId, categoryId} = req.body;
+    const { title, description, userId, categoryId} = req.body;
     await Todos.create(     
-      { title, description, IsCompleted, userId, categoryId}, 
+      { title, description, userId, categoryId}, 
     );
     res.status(201).send();
   } catch (error) {
